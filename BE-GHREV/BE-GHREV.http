@@ -1,0 +1,6 @@
+@BE_GHREV_HostAddress = http://localhost:5123
+
+GET {{BE_GHREV_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
