@@ -1,4 +1,6 @@
-﻿namespace BE_GHREV.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BE_GHREV.Models
 {
     public class Prodotti
     {
@@ -6,7 +8,10 @@
         public string Nome { get; set; }
         public string Descrizione { get; set; }
         public float Prezzo { get; set; }
-        public int ID_categorie { get; set; }
+
+        [ForeignKey("Categorie")]
+        public int ID_Categorie { get; set; }
+
         public string Immagini { get; set; }
 
         // Relazione con Categoria
