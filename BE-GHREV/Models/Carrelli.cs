@@ -13,7 +13,7 @@ namespace BE_GHREV.Models
         public int ID_Prodotti { get; set; }
 
         // Relazioni con Utente e Prodotto
-        public Utenti Utenti { get; set; }
-        public Prodotti Prodotti { get; set; }
+        public required Utenti Utenti { get; set; }
+        public required Prodotti Prodotti { get; set; }
     }
 }
