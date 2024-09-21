@@ -5,22 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { CarrelloComponent } from './pages/carrello/carrello.component';
+import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
+    CarrelloComponent,
+    ChiSiamoComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ErrorPageComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
