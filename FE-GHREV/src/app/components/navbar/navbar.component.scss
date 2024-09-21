@@ -1,0 +1,30 @@
+$navbar-black-color: #000000;
+
+.border-custom {
+  border: 2px solid white;
+}
+.navbar {
+  background-color: $navbar-black-color;  // Colore di sfondo della navbar nero
+  .nav-link {
+    color: #ffffff;  // Colore del testo bianco
+    &:hover {
+      color: #cccccc;  // Colore del testo al passaggio del mouse (grigio chiaro)
+    }
+  }
+
+  .navbar-brand {
+    color: #ffffff;  // Colore del brand/logo bianco
+    &:hover {
+      color: #cccccc;  // Colore del brand/logo al passaggio del mouse
+    }
+  }
+
+  .btn-outline-success {
+    border-color: #ffffff;  // Colore del bordo del bottone bianco
+    color: #ffffff;  // Colore del testo del bottone bianco
+    &:hover {
+      background-color: $navbar-black-color;  // Colore di sfondo al passaggio del mouse nero
+      color: #ffffff;  // Colore del testo bianco
+    }
+  }
+}
