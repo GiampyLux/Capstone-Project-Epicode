@@ -1,30 +1,33 @@
 $navbar-black-color: #000000;
-
+.search-bar {
+  width: 700px;
+  max-width: 100%;
+}
 .border-custom {
   border: 2px solid white;
 }
 .navbar {
-  background-color: $navbar-black-color;  // Colore di sfondo della navbar nero
+  background-color: $navbar-black-color;
   .nav-link {
-    color: #ffffff;  // Colore del testo bianco
+    color: #ffffff;
     &:hover {
-      color: #cccccc;  // Colore del testo al passaggio del mouse (grigio chiaro)
+      color: #cccccc;
     }
   }
 
   .navbar-brand {
-    color: #ffffff;  // Colore del brand/logo bianco
+    color: #ffffff;
     &:hover {
-      color: #cccccc;  // Colore del brand/logo al passaggio del mouse
+      color: #cccccc;
     }
   }
 
   .btn-outline-success {
-    border-color: #ffffff;  // Colore del bordo del bottone bianco
-    color: #ffffff;  // Colore del testo del bottone bianco
+    border-color: #ffffff;
+    color: #ffffff;
     &:hover {
-      background-color: $navbar-black-color;  // Colore di sfondo al passaggio del mouse nero
-      color: #ffffff;  // Colore del testo bianco
+      background-color: $navbar-black-color;
+      color: #ffffff;
     }
   }
 }
