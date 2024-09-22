@@ -21,3 +21,25 @@
     }
   }
 }
+
+.categories-section {
+  padding: 50px 0;
+
+  .category-image {
+    max-width: 80%; /* Riduci la dimensione delle immagini */
+    height: auto;
+    padding: 5px; /* Riduci il padding interno */
+  }
+
+  .row {
+    justify-content: center;
+    gap: 10px; /* Aggiunge uno spazio minimo tra le colonne */
+  }
+
+  @media (max-width: 576px) {
+    .category-image {
+      max-width: 90%; /* Immagini più grandi sui dispositivi piccoli */
+    }
+  }
+}
+
