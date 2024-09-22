@@ -7,7 +7,7 @@ namespace BE_GHREV.Models
         public int ID { get; set; }
         public required string Nome { get; set; }
         public required string Descrizione { get; set; }
-        public float Prezzo { get; set; }
+        public double Prezzo { get; set; }
 
         [ForeignKey("Categorie")]
         public int ID_Categorie { get; set; }
