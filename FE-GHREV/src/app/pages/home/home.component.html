@@ -34,4 +34,11 @@
   </div>
 </div>
 
+<div class="prodotti-container"></div>
+  <div *ngFor="let prodotto of prodotti" class="prodotto-card">
+    <img [src]="prodotto.immagini" alt="{{ prodotto.nome }}" />
+    <h2>{{ prodotto.nome }}</h2>
+    <p>{{ prodotto.descrizione }}</p>
+    <p>Prezzo: {{ prodotto.prezzo | currency }}</p>
+  </div>
 
