@@ -43,3 +43,26 @@
   }
 }
 
+.card {
+  background-color: #0f0d0d !important; /* Forza il colore di sfondo nero */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  color: #ccc; /* Colore del testo per renderlo più morbido rispetto al bianco puro */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+.featured-image {
+  max-width: 20%; /* Riduci la dimensione dell'immagine */
+  height: auto; /* Mantieni il rapporto d'aspetto */
+  margin-bottom: 50px; /* Aggiungi uno spazio inferiore per separarlo dalle card */
+}
+

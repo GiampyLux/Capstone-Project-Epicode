@@ -34,11 +34,25 @@
   </div>
 </div>
 
-<div class="prodotti-container"></div>
-  <div *ngFor="let prodotto of prodotti" class="prodotto-card">
-    <img [src]="prodotto.immagini" alt="{{ prodotto.nome }}" />
-    <h2>{{ prodotto.nome }}</h2>
-    <p>{{ prodotto.descrizione }}</p>
-    <p>Prezzo: {{ prodotto.prezzo | currency }}</p>
+<div class="row justify-content-center">
+  <div class="col-12 text-center mb-4">
+    <img src="../../../assets/prodotti btn.png" alt="Prodotto in evidenza" class="img-fluid featured-image">
   </div>
+</div>
+
+
+
+<div class="row">
+  <div *ngFor="let prodotto of prodotti" class="col-sm-12 col-md-6 col-lg-4 mb-4">
+    <div class="card bg-dark" style="width: 18rem;">
+      <img [src]="prodotto.immagini" class="card-img-top" [alt]="prodotto.nome" />
+      <div class="card-body">
+        <h5 class="card-title text-white">{{ prodotto.nome }}</h5>
+        <p class="card-text text-white">{{ prodotto.descrizione }}</p>
+        <p class="card-text text-white"><strong>Prezzo: </strong>{{ prodotto.prezzo | currency:'EUR' }}</p>
+        <a href="#" class="btn btn-primary">Aggiungi al carrello</a>
+      </div>
+    </div>
+  </div>
+</div>
 
