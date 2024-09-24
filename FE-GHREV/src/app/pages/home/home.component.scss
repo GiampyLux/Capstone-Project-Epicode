@@ -1,3 +1,6 @@
+body {
+  overflow: hidden;
+}
 .home-content {
   padding: 50px 0;
 
@@ -80,7 +83,7 @@
 .fixed-image {
   max-height: 180px; /* Limita l'altezza dell'immagine per evitare che distorca la card */
   object-fit: cover; /* Mantiene il rapporto dell'immagine */
-  width: 100%; /* Assicura che l'immagine sia sempre larga quanto la card */
+
 }
 
 .card-body {
@@ -105,4 +108,8 @@
 .card-body {
   padding: 1.25rem;
   min-height: 120px; /* Mantieni una consistenza nell'altezza del corpo della card */
+}
+.row {
+  --bs-gutter-x: 0; /* Rimuovi lo spazio orizzontale tra le colonne */
+  --bs-gutter-y: 0; /* Rimuovi lo spazio verticale tra le righe */
 }
