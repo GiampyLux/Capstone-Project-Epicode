@@ -1,3 +1,4 @@
+import { DettagliComponent } from './components/dettagli/dettagli.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarrelloComponent } from './pages/carrello/carrello.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   path: 'register',
  component: RegisterComponent
 },
+{ path: 'dettagli/:id', component: DettagliComponent },
 
 {
   path: '**',

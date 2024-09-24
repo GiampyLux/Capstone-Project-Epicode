@@ -1,0 +1,108 @@
+.dettaglio-prodotto {
+  padding: 50px 0;
+
+  .prodotto-immagine {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .prodotto-titolo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #343a40;
+  }
+
+  .prodotto-descrizione {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #555;
+  }
+
+  .prodotto-prezzo {
+    font-size: 1.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+
+  .prodotto-categoria {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .prodotto-titolo {
+      font-size: 2rem;
+    }
+
+    .prodotto-descrizione {
+      font-size: 1.1rem;
+    }
+
+    .prodotto-prezzo {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.dettaglio-prodotto {
+  padding: 50px 0;
+  color: #fff;  /* Imposta il colore bianco per tutto il contenuto della pagina */
+
+  .prodotto-immagine {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .prodotto-titolo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;  /* Titolo in bianco */
+  }
+
+  .prodotto-descrizione {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #f8f9fa;  /* Testo descrizione leggermente più morbido */
+  }
+
+  .prodotto-prezzo {
+    font-size: 1.5rem;
+    color: #28a745;  /* Prezzo verde, per mantenere contrasto sullo sfondo */
+    margin-bottom: 20px;
+  }
+
+  .prodotto-categoria {
+    font-size: 1.2rem;
+    color: #ddd;  /* Categoria in un bianco morbido per evitare troppo contrasto */
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;  /* Colore del testo nel bottone in bianco */
+  }
+
+  @media (max-width: 768px) {
+    .prodotto-titolo {
+      font-size: 2rem;
+    }
+
+    .prodotto-descrizione {
+      font-size: 1.1rem;
+    }
+
+    .prodotto-prezzo {
+      font-size: 1.3rem;
+    }
+  }
+}
+

@@ -7,6 +7,11 @@ import { Prodotto } from '../models/prodotto';
   providedIn: 'root'
 })
 export class ProdottiService {
+  // prodotti.service.ts
+  getProdottoById(id: number): Observable<Prodotto> {
+  return this.http.get<Prodotto>(`${this.apiUrl}/${id}`);
+}
+
   private apiUrl = 'https://localhost:7133/api/Prodotti';
 
   constructor(private http: HttpClient) { }
@@ -15,3 +20,4 @@ export class ProdottiService {
     return this.http.get<Prodotto[]>(this.apiUrl);
   }
 }
+

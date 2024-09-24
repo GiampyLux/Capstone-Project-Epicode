@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { DettagliComponent } from './components/dettagli/dettagli.component';
 
 
 
@@ -24,6 +25,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     RegisterComponent,
     HomeComponent,
     ErrorPageComponent,
+    DettagliComponent,
 
   ],
   imports: [
