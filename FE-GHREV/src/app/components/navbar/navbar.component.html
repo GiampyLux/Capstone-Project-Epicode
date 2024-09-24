@@ -2,7 +2,7 @@
   <div class="container-fluid border-custom">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link active text-white fs-5 border-end " aria-current="page" routerLink="">Home</a>
+        <a class="nav-link active text-white fs-5 border-end" aria-current="page" routerLink="">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white fs-5 border-end" routerLink="Carrello">Carrello</a>
@@ -11,16 +11,24 @@
         <a class="nav-link text-white fs-5 border-end" routerLink="Chi-siamo">Chi Siamo</a>
       </li>
     </ul>
-    <form class="d-flex search-bar" role="search" >
+
+    <form class="d-flex search-bar" role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <i class=" text-white fs-5 bi bi-search"></i>
+      <i class="text-white fs-5 bi bi-search"></i>
     </form>
+
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link text-white fs-5 border-start border-end" routerLink="register">Register</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link text-white fs-5" routerLink="login">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+        <span class="navbar-text text-white fs-5 me-3">Benvenut*, {{ userName }}!</span>
+      </li>
+      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+        <button class="btn btn-link nav-link text-white fs-5" (click)="logout()">Logout</button>
       </li>
     </ul>
   </div>
