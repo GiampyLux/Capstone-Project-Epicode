@@ -12,9 +12,9 @@
       </li>
     </ul>
 
-    <form class="d-flex search-bar" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <i class="text-white fs-5 bi bi-search"></i>
+    <form class="d-flex search-bar" role="search" (submit)="performSearch(searchInput.value); $event.preventDefault();">
+      <input #searchInput class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light" type="submit"><i class="text-white fs-5 bi bi-search"></i></button>
     </form>
 
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -24,10 +24,8 @@
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link text-white fs-5" routerLink="login">Login</a>
       </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <span class="navbar-text text-white fs-5 me-3">Benvenut*, {{ userName }}!</span>
-      </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+      <li class="nav-item d-flex align-items-center" *ngIf="authService.isLoggedIn()">
+        <span class="navbar-text text-white fs-5 mx-3">Benvenuto {{userName}}</span>
         <button class="btn btn-link nav-link text-white fs-5" (click)="logout()">Logout</button>
       </li>
     </ul>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, of, BehaviorSubject } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,9 @@ import { catchError, of, BehaviorSubject } from 'rxjs';
 export class AuthService {
   private apiUrl = 'https://localhost:7133/api/auth';
   private userNameSubject = new BehaviorSubject<string | null>(null); // Comportamento per il nome dell'utente
+
+
+
 
   constructor(private http: HttpClient, private router: Router) {
     // Controlla se il nome è già presente in localStorage
@@ -61,10 +65,30 @@ export class AuthService {
     });
   }
 
+ // Ottieni l'ID utente dal token
+ getUserIdFromToken(): number | null {
+  const token = localStorage.getItem('token');
+  console.log('Token to extract ID from:', token); // Verifica se il token è presente
+  if (token) {
+    try {
+      const decodedToken: any = jwtDecode(token); // Decodifica il token
+      const userId = decodedToken?.nameid; // Estrai l'ID utente (assicurati che corrisponda alla chiave nel token)
+      console.log('Extracted userId:', userId); // Verifica l'ID estratto
+      return userId ? parseInt(userId, 10) : null; // Converti in numero, se necessario
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null; // In caso di errore, restituisci null
+    }
+  }
+  return null; // Utente non loggato
+}
   // Verifica se l'utente è loggato
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
-  }
+    const loggedIn = !!localStorage.getItem('token');
+    console.log('Utente loggato:', loggedIn); // Verifica se l'utente è loggato
+    return loggedIn;
+}
+
 
   // Logout
   logout() {
@@ -84,3 +108,6 @@ export class AuthService {
     return this.userNameSubject.asObservable();
   }
 }
+
+
+

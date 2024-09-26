@@ -40,7 +40,23 @@ namespace BE_GHREV.Controllers
             return prodotti;
         }
 
-     
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<Prodotti>>> GetProdottiBySearch(string name)
+        {
+            var prodotti = await _context.Prodotti
+                                         .Include(p => p.Categorie)
+                                         .Where(p => p.Nome.Contains(name))
+                                         .ToListAsync();
+
+            if (!prodotti.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(prodotti);
+        }
+
+
         [HttpPost]
         public async Task<ActionResult<Prodotti>> PostProdotti(Prodotti prodotti)
         {

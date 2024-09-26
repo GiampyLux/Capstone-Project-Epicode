@@ -19,5 +19,8 @@ export class ProdottiService {
   getProdotti(): Observable<Prodotto[]> {
     return this.http.get<Prodotto[]>(this.apiUrl);
   }
+  getProdottiByName(search: string): Observable<Prodotto[]> {
+    return this.http.get<Prodotto[]>(`${this.apiUrl}/search?name=${search}`); // Chiamata all'API con query
+  }
 }
 

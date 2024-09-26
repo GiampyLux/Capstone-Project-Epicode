@@ -1,1 +1,22 @@
-<p>carrello works!</p>
+<h2 id="titoloCarrello" class="text-white text-center">Prodotti nel Carrello</h2>
+<div class="carrello bg-white rounded-3 m-4 p-4">
+    <div class="row" *ngFor="let prodotto of carrelli">
+        <div class="col-3">
+            <img [src]="prodotto.prodotti.immagini" class="img-fluid" alt="{{ prodotto.prodotti.nome }}">
+        </div>
+        <div class="col-9">
+            <h3>{{ prodotto.prodotti.nome }}</h3>
+            <p>Descrizione: {{ prodotto.prodotti.descrizione }}</p>
+            <p>Prezzo: {{ prodotto.prodotti.prezzo }} €</p>
+            <p>Quantità: {{ prodotto.quantita }}</p>
+            <button class="btn btn-danger" (click)="eliminaArticolo(prodotto.prodotti.id)">Rimuovi</button>
+        </div>
+        <hr>
+    </div>
+    <div *ngIf="carrelli.length === 0">
+        <p>Il tuo carrello è vuoto.</p>
+    </div>
+    <div *ngIf="carrelli.length > 0" class="mt-4">
+      <h4>Totale: {{ calcolaTotale() }} €</h4>
+      <button class="btn btn-primary" (click)="andareAlCheckout()">Compra</button>
+  </div>

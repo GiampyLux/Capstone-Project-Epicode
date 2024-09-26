@@ -1,0 +1,87 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" style="background-color: black; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto;">
+  <!-- Nome -->
+  <div class="form-group">
+    <label for="first-name" class="text-white">Nome:</label>
+    <input
+      id="first-name"
+      formControlName="firstName"
+      class="form-control"
+      required
+      style="background-color: #333; color: white;"
+    />
+    <div *ngIf="checkoutForm.get('firstName')?.invalid && checkoutForm.get('firstName')?.touched">
+      <p class="text-danger">Nome è obbligatorio.</p>
+    </div>
+  </div>
+
+  <!-- Cognome -->
+  <div class="form-group">
+    <label for="last-name" class="text-white">Cognome:</label>
+    <input
+      id="last-name"
+      formControlName="lastName"
+      class="form-control"
+      required
+      style="background-color: #333; color: white;"
+    />
+    <div *ngIf="checkoutForm.get('lastName')?.invalid && checkoutForm.get('lastName')?.touched">
+      <p class="text-danger">Cognome è obbligatorio.</p>
+    </div>
+  </div>
+
+  <!-- Numero Carta di Credito -->
+  <div class="form-group">
+    <label for="card-number" class="text-white">Numero Carta di Credito:</label>
+    <input
+      id="card-number"
+      formControlName="cardNumber"
+      class="form-control"
+      required
+      style="background-color: #333; color: white;"
+      minlength="16"
+      maxlength="16"
+      pattern="\d+"
+    />
+    <div *ngIf="checkoutForm.get('cardNumber')?.invalid && checkoutForm.get('cardNumber')?.touched">
+      <p class="text-danger">Numero Carta di Credito è obbligatorio e deve contenere 16 cifre.</p>
+    </div>
+  </div>
+
+  <!-- Data di Scadenza -->
+  <div class="form-group">
+    <label for="expiry" class="text-white">Data di Scadenza:</label>
+    <input
+      id="expiry"
+      formControlName="expiry"
+      class="form-control"
+      required
+      style="background-color: #333; color: white;"
+      pattern="^(0[1-9]|1[0-2])\/[0-9]{2}$"
+    />
+    <div *ngIf="checkoutForm.get('expiry')?.invalid && checkoutForm.get('expiry')?.touched">
+      <p class="text-danger">Data di Scadenza è obbligatoria e deve essere nel formato MM/YY.</p>
+    </div>
+  </div>
+
+  <!-- CVC -->
+  <div class="form-group">
+    <label for="cvc" class="text-white">CVC:</label>
+    <input
+      id="cvc"
+      formControlName="cvc"
+      class="form-control"
+      required
+      style="background-color: #333; color: white;"
+      minlength="3"
+      maxlength="3"
+      pattern="\d+"
+    />
+    <div *ngIf="checkoutForm.get('cvc')?.invalid && checkoutForm.get('cvc')?.touched">
+      <p class="text-danger">CVC è obbligatorio e deve contenere 3 cifre.</p>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="checkoutForm.invalid">Paga</button>
+
+  <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+</form>

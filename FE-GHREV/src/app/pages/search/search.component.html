@@ -1,0 +1,15 @@
+
+<div class="row">
+  <h2 class="page-header text-center text-white mb-5" id="titoloCarrello">Risultati Ricerca</h2>
+  <div *ngFor="let prodotto of prodotti" class="col-sm-12 col-md-6 col-lg-4 mb-4">
+    <div class="card bg-dark same-size-card" style="width: 18rem;">
+      <img [src]="prodotto.immagini" class="card-img-top fixed-image" [alt]="prodotto.nome" />
+      <div class="card-body">
+        <h5 class="card-title text-white">{{ prodotto.nome }}</h5>
+        <p class="card-text text-white">{{ prodotto.descrizione }}</p>
+        <p class="card-text text-white"><strong>Prezzo: </strong>{{ prodotto.prezzo | currency:'EUR' }}</p>
+        <a [routerLink]="['/dettagli', prodotto.id]" class="btn btn-primary">Dettagli</a>
+      </div>
+    </div>
+  </div>
+</div>

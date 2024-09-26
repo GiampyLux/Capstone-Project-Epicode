@@ -7,6 +7,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AuthGuard } from './auth/auth.guard';
+import { SearchComponent } from './pages/search/search.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 const routes: Routes = [
 {
@@ -16,7 +19,7 @@ const routes: Routes = [
 
 {
   path: 'Carrello',
-  component: CarrelloComponent
+  component: CarrelloComponent, canActivate:[AuthGuard]
 },
 
 {
@@ -35,6 +38,15 @@ const routes: Routes = [
  component: RegisterComponent
 },
 { path: 'dettagli/:id', component: DettagliComponent },
+
+{
+  path: 'search',
+  component: SearchComponent
+},
+{
+  path: 'checkout',
+  component: CheckoutComponent, canActivate:[AuthGuard]
+},
 
 {
   path: '**',

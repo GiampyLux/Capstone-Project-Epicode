@@ -11,6 +11,7 @@ namespace BE_GHREV.Models
 
         [ForeignKey("Prodotti")]
         public int ID_Prodotti { get; set; }
+        public int Quantita { get; set; }
 
         // Relazioni con Utente e Prodotto
         public required Utenti Utenti { get; set; }

@@ -1,0 +1,118 @@
+body {
+  overflow: hidden;
+}
+.home-content {
+  padding: 50px 0;
+
+  .welcome-section {
+    margin-bottom: 30px;
+  }
+
+  .benvenuti-image {
+    max-width: 80%;
+  }
+
+  .logo-image {
+    max-width: 50%;
+  }
+
+  .description-box {
+    margin-top: 30px;
+
+    .description-image {
+      max-width: 100%;
+    }
+  }
+}
+
+.categories-section {
+  padding: 50px 0;
+
+  .category-image {
+    max-width: 80%; /* Riduci la dimensione delle immagini */
+    height: auto;
+    padding: 5px; /* Riduci il padding interno */
+  }
+
+  .row {
+    justify-content: center;
+    gap: 10px; /* Aggiunge uno spazio minimo tra le colonne */
+  }
+
+  @media (max-width: 576px) {
+    .category-image {
+      max-width: 90%; /* Immagini più grandi sui dispositivi piccoli */
+    }
+  }
+}
+
+.card {
+  background-color: #0f0d0d !important; /* Forza il colore di sfondo nero */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-text {
+  color: #ccc; /* Colore del testo per renderlo più morbido rispetto al bianco puro */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+.featured-image {
+  max-width: 20%; /* Riduci la dimensione dell'immagine */
+  height: auto; /* Mantieni il rapporto d'aspetto */
+  margin-bottom: 50px; /* Aggiungi uno spazio inferiore per separarlo dalle card */
+}
+
+
+/* Forza le card a mantenere la stessa altezza */
+.same-size-card {
+  height: 100%; /* La card occuperà sempre l'altezza massima disponibile */
+  min-height: 400px; /* Imposta un'altezza minima per dare coerenza visiva */
+  max-height: 500px; /* Imposta un limite massimo per evitare card troppo alte */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Mantiene il pulsante in basso */
+}
+
+.fixed-image {
+  max-height: 180px; /* Limita l'altezza dell'immagine per evitare che distorca la card */
+  object-fit: cover; /* Mantiene il rapporto dell'immagine */
+
+}
+
+.card-body {
+  flex-grow: 1; /* Occupa lo spazio disponibile per gestire il contenuto */
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-text {
+  color: #ccc; /* Testo leggermente più morbido per contrasto con il nero */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Se il testo è troppo lungo, viene troncato con "..." */
+  white-space: nowrap; /* Impedisce che il testo vada su una nuova linea */
+}
+
+/* Aggiungi margini ai titoli per garantire uno spazio uniforme */
+.card-title {
+  margin-bottom: 0.75rem;
+}
+
+/* Aggiungi uno spazio interno e imposta un'altezza fissa per uniformare le card */
+.card-body {
+  padding: 1.25rem;
+  min-height: 120px; /* Mantieni una consistenza nell'altezza del corpo della card */
+}
+.row {
+  --bs-gutter-x: 0; /* Rimuovi lo spazio orizzontale tra le colonne */
+  --bs-gutter-y: 0; /* Rimuovi lo spazio verticale tra le righe */
+}
+#titoloCarrello {
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+ }

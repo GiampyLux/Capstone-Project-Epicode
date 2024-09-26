@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent implements OnInit {
   userName: string | null = null;
 
-  constructor(public authService: AuthService) {}
+  constructor(private router: Router, public authService: AuthService) {}
 
   ngOnInit() {
     // Iscriviti al BehaviorSubject per ottenere il nome dell'utente
@@ -20,5 +21,11 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authService.logout(); // Esegui il logout
+  }
+
+  performSearch(query: string): void {
+    if (query) {
+      this.router.navigate(['/search'], { queryParams: { name: query } });
+    }
   }
 }

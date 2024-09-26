@@ -13,19 +13,24 @@
       <!-- Prezzo del Prodotto -->
       <div class="prodotto-prezzo">
         <strong>Prezzo: </strong>
-        <span>{{ prodotto.prezzo | currency:'EUR' }}</span>
+        <span>{{ prodotto.prezzo }} €</span>
       </div>
 
       <!-- Categoria del Prodotto (se disponibile) -->
-      <div *ngIf="prodotto.id_categoria" class="prodotto-categoria">
+      <div *ngIf="prodotto.iD_Categorie" class="prodotto-categoria">
         <strong>Categoria: </strong>
-        <span>{{ prodotto.id_categoria }}</span>
+        <span>{{ prodotto.categorie.nome }}</span>
       </div>
 
       <!-- Pulsante per aggiungere al carrello -->
       <div class="mt-4">
-        <button class="btn btn-primary btn-lg">Aggiungi al carrello</button>
+        <div class="mt-4" *ngIf="authService.isLoggedIn()">
+          <button class="btn btn-primary btn-lg" (click)="aggiungiAlCarrello()">Aggiungi al carrello</button>
+        </div>
+        <div class="mt-4" *ngIf="!authService.isLoggedIn()">
+          <p class="text-danger">Effettua il login per aggiungere al carrello </p>
+        </div>
       </div>
     </div>
   </div>
-
+</div>

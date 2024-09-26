@@ -57,59 +57,59 @@ body {
 }
 
 .card-text {
-  color: #ccc; /* Colore del testo per renderlo più morbido rispetto al bianco puro */
+  color: #ccc;
 }
 
 .card-body {
   padding: 1.5rem;
 }
 .featured-image {
-  max-width: 20%; /* Riduci la dimensione dell'immagine */
-  height: auto; /* Mantieni il rapporto d'aspetto */
-  margin-bottom: 50px; /* Aggiungi uno spazio inferiore per separarlo dalle card */
+  max-width: 20%;
+  height: auto;
+  margin-bottom: 50px;
 }
 
 
-/* Forza le card a mantenere la stessa altezza */
+
 .same-size-card {
-  height: 100%; /* La card occuperà sempre l'altezza massima disponibile */
-  min-height: 400px; /* Imposta un'altezza minima per dare coerenza visiva */
-  max-height: 500px; /* Imposta un limite massimo per evitare card troppo alte */
+  height: 100%;
+  min-height: 400px;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Mantiene il pulsante in basso */
+  justify-content: space-between;
 }
 
 .fixed-image {
-  max-height: 180px; /* Limita l'altezza dell'immagine per evitare che distorca la card */
-  object-fit: cover; /* Mantiene il rapporto dell'immagine */
+  max-height: 200px;
+  object-fit: cover;
 
 }
 
 .card-body {
-  flex-grow: 1; /* Occupa lo spazio disponibile per gestire il contenuto */
+  flex-grow: 1;
   padding: 1rem;
   text-align: center;
 }
 
 .card-text {
-  color: #ccc; /* Testo leggermente più morbido per contrasto con il nero */
+  color: #ccc;
   overflow: hidden;
-  text-overflow: ellipsis; /* Se il testo è troppo lungo, viene troncato con "..." */
-  white-space: nowrap; /* Impedisce che il testo vada su una nuova linea */
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/* Aggiungi margini ai titoli per garantire uno spazio uniforme */
+
 .card-title {
   margin-bottom: 0.75rem;
 }
 
-/* Aggiungi uno spazio interno e imposta un'altezza fissa per uniformare le card */
+
 .card-body {
   padding: 1.25rem;
-  min-height: 120px; /* Mantieni una consistenza nell'altezza del corpo della card */
+  min-height: 120px;
 }
 .row {
-  --bs-gutter-x: 0; /* Rimuovi lo spazio orizzontale tra le colonne */
-  --bs-gutter-y: 0; /* Rimuovi lo spazio verticale tra le righe */
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
 }

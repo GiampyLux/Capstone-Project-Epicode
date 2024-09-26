@@ -1,7 +1,7 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="background-color: black; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto;">
   <div class="form-group">
     <label for="nome" class="text-white">Nome:</label>
-    <input id="nome" formControlName="nome" class="form-control" required style="background-color: #333; color: white;">
+    <input id="nome" formControlName="nome" class="form-control" required style="background-color: #333; color: white;" required>
     <div *ngIf="registerForm.get('nome')?.invalid && registerForm.get('nome')?.touched">
       <p class="text-danger">Nome is required.</p>
     </div>
@@ -9,7 +9,7 @@
 
   <div class="form-group">
     <label for="cognome" class="text-white">Cognome:</label>
-    <input id="cognome" formControlName="cognome" class="form-control" required style="background-color: #333; color: white;">
+    <input id="cognome" formControlName="cognome" class="form-control" required style="background-color: #333; color: white;" required>
     <div *ngIf="registerForm.get('cognome')?.invalid && registerForm.get('cognome')?.touched">
       <p class="text-danger">Cognome is required.</p>
     </div>
@@ -17,7 +17,17 @@
 
   <div class="form-group">
     <label for="tel" class="text-white">Telefono:</label>
-    <input id="tel" formControlName="tel" class="form-control" required style="background-color: #333; color: white;">
+    <input
+      id="tel"
+      formControlName="tel"
+      class="form-control"
+      required
+      style="background-color: #333; color: white;"
+      type="tel"
+      pattern="[0-9]{10,15}"
+      title="Inserisci un numero di telefono valido (10-15 cifre)"
+      placeholder="Inserisci il tuo numero di telefono"
+    />
     <div *ngIf="registerForm.get('tel')?.invalid && registerForm.get('tel')?.touched">
       <p class="text-danger">Telefono is required.</p>
     </div>
@@ -25,7 +35,7 @@
 
   <div class="form-group">
     <label for="email" class="text-white">Email:</label>
-    <input id="email" formControlName="email" type="email" class="form-control" required style="background-color: #333; color: white;">
+    <input id="email" formControlName="email" type="email" class="form-control" required style="background-color: #333; color: white;" required>
     <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
       <p class="text-danger">Email is required and should be valid.</p>
     </div>
@@ -33,7 +43,7 @@
 
   <div class="form-group">
     <label for="password" class="text-white">Password:</label>
-    <input id="password" formControlName="password" type="password" class="form-control" required style="background-color: #333; color: white;">
+    <input id="password" formControlName="password" type="password" class="form-control" required style="background-color: #333; color: white;" required>
     <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
       <p class="text-danger">Password must be at least 6 characters long.</p>
     </div>

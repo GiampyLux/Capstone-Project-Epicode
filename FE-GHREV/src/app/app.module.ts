@@ -12,7 +12,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { DettagliComponent } from './components/dettagli/dettagli.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './pages/search/search.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 
@@ -27,13 +29,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ErrorPageComponent,
     DettagliComponent,
+    SearchComponent,
+    CheckoutComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
 
   ],
